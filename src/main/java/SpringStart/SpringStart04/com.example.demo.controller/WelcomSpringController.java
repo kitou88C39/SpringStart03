@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class WelcomSpringController {
 
-    @GetMapping("/hello")
-    public Stringhello() {
-    // HMTLテンプレートに　hello-spirng.html を指定
-        return "hello-spirng";
+    @GetMapping("/welcome")
+    public Stringwelcome() {
+    // HMTLテンプレートに　welcome-spirng.html を指定
+        return "welcome-spirng";
     }
 }
