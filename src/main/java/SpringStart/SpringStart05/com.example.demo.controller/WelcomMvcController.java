@@ -6,9 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class WelcomMvcontroller {
 
-    @GetMapping("/welcome")
-    public Stringwelcome() {
-    // HMTLテンプレートに　welcome-spirng.html を指定
-        return "welcome-spirng";
+    @GetMapping("/welcome-m")
+    public String welcomeM(Model model) {
+
+        model.addAttribute("greeting","Hello");
+        model.addAttribute("welcome","Welcom MVC(Model)");
+
+        return "welcome-mvc";
     }
 }
