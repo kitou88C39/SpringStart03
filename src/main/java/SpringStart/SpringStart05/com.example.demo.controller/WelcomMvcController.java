@@ -1,7 +1,9 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.web.servlet.ModelAndView;
 
 @Controller
 public class WelcomMvcontroller {
