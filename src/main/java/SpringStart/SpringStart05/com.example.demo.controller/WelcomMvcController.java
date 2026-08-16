@@ -17,11 +17,8 @@ public class WelcomMvcontroller {
         return "welcome-mvc";
     }
 
-@Controller
-public class WelcomMvcontroller {
-
     @GetMapping("/welcome-mv")
-    public String welcomeM(ModelAndView mv) {
+    public ModelAndView welcomeMv(ModelAndView mv) {
 
         model.addAttribute("greeting","Hello");
         model.addAttribute("welcome","Welcom MVC(ModelAndView)");
