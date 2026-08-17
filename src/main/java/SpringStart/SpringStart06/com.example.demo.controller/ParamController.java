@@ -8,23 +8,11 @@ import org.springframework.web.web.servlet.ModelAndView;
 @Controller
 public class ParamController {
 
-    @GetMapping("/welcome-m")
-    public String welcomeM(Model model) {
+    @GetMapping("/get-param")
+    public String getParam(@RequestParam greeting, Model model) {
 
-        model.addAttribute("greeting","Hello");
-        model.addAttribute("welcome","Welcom MVC(Model)");
+        model.addAttribute("mGreeting",greeting);
 
-        return "welcome-mvc";
-    }
-
-    @GetMapping("/welcome-mv")
-    public ModelAndView welcomeMv(ModelAndView mv) {
-
-        model.addAttribute("greeting","Hello");
-        model.addAttribute("welcome","Welcom MVC(ModelAndView)");
-
-        mv.setViewName("welcome-mvc");
-
-        return mv;
+        return "deiplay";
     }
 }
