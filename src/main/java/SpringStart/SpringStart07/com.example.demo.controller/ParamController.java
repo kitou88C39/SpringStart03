@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ParamController {
 
+    @GetMapping("/input")
+    public String input(){
+        return "input";
+    }
+
     @PostMapping("/post-param")
     public String getParam(@RequestParam greeting,
             Model model) {
