@@ -12,7 +12,7 @@ public class ParamController {
     public String getParam(@RequestParam greeting,
     public String getParam(@RequestParam(name="greeting") String greeting,
     public String getParam(@RequestParam(required="falseg") String greeting,
-    public String getParam(@RequestParam(defaultValue="(未設定)") String greeting
+    public String getParam(@RequestParam(defaultValue="(未設定)") String greeting,
             Model model) {
 
         model.addAttribute("mGreeting",greeting);
