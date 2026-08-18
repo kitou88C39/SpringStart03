@@ -3,7 +3,8 @@ package com.example.demo.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ReviewController {
@@ -14,7 +15,8 @@ public class ReviewController {
     }
 
     @PostMapping("/regist-review")
-    public String registReview(RegistReviewForm form){
+    public String registReview(@ModelAttribute RegistReviewForm form){
         System.out.println(form);
         return "confirm-regist-review";
+    }
 }
