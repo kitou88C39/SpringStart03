@@ -19,6 +19,6 @@ public class ParamController {
 
         model.addAttribute("mGreeting", greeting);
 
-        return "display";
+        return "display07";
     }
 }
