@@ -14,11 +14,11 @@ public class ParamController {
     }
 
     @PostMapping("/post-param")
-    public String getParam(@RequestParam greeting,
+    public String getParam(@RequestParam String greeting,
             Model model) {
 
-        model.addAttribute("mGreeting",greeting);
+        model.addAttribute("mGreeting", greeting);
 
-        return "deiplay";
+        return "display";
     }
 }
