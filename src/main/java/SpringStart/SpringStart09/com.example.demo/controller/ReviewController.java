@@ -28,8 +28,6 @@ public class ReviewController {
 
     @PostMapping("/confirm-regist-review")
     public String confirmRegistReview(RegistReviewForm form, Model model){
-        return "regist-review";
-    }
 
     model.addAttribute("msg","レビュー登録が完了しました。");d
 
