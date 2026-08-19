@@ -21,13 +21,18 @@ public class ReviewController {
         return "regist-review";
     }
 
-    @PostMapping("/show-review-form-ret")
-    public String registReviewFormRet(@ModelAttribute RegistReviewForm form){
+    @PostMapping("/show-review")
+    public String registReview(@ModelAttribute RegistReviewForm form){
+        return "confirm-regist-review";
+    }
+
+    @PostMapping("/confirm-regist-review")
+    public String confirmRegistReview(RegistReviewForm form, Model model){
         return "regist-review";
     }
 
-    @PostMapping("/show-review-form-ret")
-    public String registReviewFormRet(@ModelAttribute RegistReviewForm form){
-        return "regist-review";
+    model.addAttribute("msg","レビュー登録が完了しました。");d
+
+    return "complete-regist-review";
     }
 }
