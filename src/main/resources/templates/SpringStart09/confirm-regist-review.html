@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <title>レビュー登録確認</title>
-  <link rel="stylesheet" th:href="@{/css/style08.css}">
+  <link rel="stylesheet" th:href="@{/css/style09.css}">
 </head>
 <body>
   <h2>レビュー登録確認</h2>
 
+   <div th:object="${reviewRegistForm}"
       【店舗ID】
-      <input type="text" name="restaurantId">
+      <p th:text="*{restaurantId}"></p>
       【利用者ID】
-      <input type="text" name="userId">
+      <p th:text="*{userId}"></p>
       【来店日】
-      <input type="text" name="visitDate">
+      <p th:text="*{visitDate}"></p>
       【評価】
-      <input type="text" name="rating">
+      <p th:text="*{rating}"></p>
       【一言コメント】
-      <input type="text" name="comment">
+      <p th:text="*{comment}"></p>
+   </div>
 
       <div>
           【店舗ID】
