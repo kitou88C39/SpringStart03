@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>レビュー登録</title>
-  <link rel="stylesheet" th:href="@{/css/style08.css}">
+  <link rel="stylesheet" th:href="@{/css/style09.css}">
 </head>
 <body>
   <h2>レビュー登録</h2>
 
   <form action="@{/regist-review}" method="POST">
       【店舗ID】
-      <input type="text" name="restaurantId">
+      <input type="text" name="restaurantId" value="3">
       【利用者ID】
-      <input type="text" name="userId">
+      <input type="text" name="userId" value="yamada">
       【来店日】
-      <input type="text" name="visitDate">
+      <input type="text" name="visitDate" value="2026-08-20">
       【評価】
-      <input type="text" name="rating">
+      <input type="text" name="rating" value="4">
       【一言コメント】
-      <input type="text" name="comment">
+      <input type="text" name="comment" value="OK">
 
       <input type="submit" value="登録"　class="btn">
   </form>
