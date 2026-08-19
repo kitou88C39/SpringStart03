@@ -20,4 +20,14 @@ public class ReviewController {
     public String registReviewFormRet(@ModelAttribute RegistReviewForm form){
         return "regist-review";
     }
+
+    @PostMapping("/show-review-form-ret")
+    public String registReviewFormRet(@ModelAttribute RegistReviewForm form){
+        return "regist-review";
+    }
+
+    @PostMapping("/show-review-form-ret")
+    public String registReviewFormRet(@ModelAttribute RegistReviewForm form){
+        return "regist-review";
+    }
 }
