@@ -20,24 +20,19 @@
       <input type="text" name="comment">
 
       <div>
-          <p>【店舗ID】</p>
+          【店舗ID】
           <p th:text="${reviewRegistForm.restaurantId}"></p>
-
-          <p>【利用者ID】</p>
+          【利用者ID】
           <p th:text="${reviewRegistForm.userId}"></p>
-
-          <p>【来店日】</p>
+          【来店日】
           <p th:text="${reviewRegistForm.visitDate}"></p>
-
-          <p>【評価】</p>
+          【評価】
           <p th:text="${reviewRegistForm.rating}"></p>
-
-          <p>【一言コメント】</p>
+          【一言コメント】
           <p th:text="${reviewRegistForm.comment}"></p>
         </div>
 
-
-      <a th:href="@{/show-review-form}"></a>
+      <a th:href="@{/show-review-form}">入力画面に戻る</a>
 
 </body>
 </html>
