@@ -16,9 +16,8 @@ public class ReviewController {
         return "regist-review";
     }
 
-    @PostMapping("/regist-review")
-    public String registReview(@ModelAttribute RegistReviewForm form){
-        System.out.println(form);
-        return "confirm-regist-review";
+    @PostMapping("/show-review-form-ret")
+    public String registReviewFormRet(@ModelAttribute RegistReviewForm form){
+        return "regist-review";
     }
 }
