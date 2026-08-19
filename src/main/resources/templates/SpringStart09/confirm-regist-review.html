@@ -30,9 +30,17 @@
      <input type="hidden" th:field="*{visitDate}">
      <input type="hidden" th:field="*{rating}">
      <input type="hidden" th:field="*{comment}">
+   </form>
 
-     <button type="submit">登録</button>
+   <form th:action="@{/regist-review}"
+         th:object="${reviewRegistForm}"
+         method="POST">
 
+     <input type="hidden" th:field="*{restaurantId}">
+     <input type="hidden" th:field="*{userId}">
+     <input type="hidden" th:field="*{visitDate}">
+     <input type="hidden" th:field="*{rating}">
+     <input type="hidden" th:field="*{comment}">
    </form>
 
 </body>
