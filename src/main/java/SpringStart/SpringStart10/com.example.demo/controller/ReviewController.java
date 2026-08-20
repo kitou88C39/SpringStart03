@@ -42,4 +42,9 @@ public class ReviewController {
     if(result.hasErrors()){
         return "regist-review";
     }
+
+    model.addAttribute("msg","レビュー登録が完了しました。");
+
+    return "complete-regist-review";
+  }
 }
