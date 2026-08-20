@@ -13,18 +13,24 @@
       th:object="${reviewRegistForm}">
       【店舗ID】
       <input type="text" th:field="*{restrantId}">
-
+      <div th:if="${#fields.hasErrors("restrantId")}"
+           th:error="*{restrantId}" class="error-msg"></div>
       【利用者ID】
       <input type="text" th:field="*{userId}">
-
+      <div th:if="${#fields.hasErrors("userId")}"
+           th:error="*{userId}" class="error-msg"></div>
       【来店日】
       <input type="text" th:field="*{visitDate}">
-
+      <div th:if="${#fields.hasErrors("visitDate")}"
+           th:error="*{visitDate}" class="error-msg"></div>
       【評価】
       <input type="text" th:field="*{rating}">
-
+      <div th:if="${#fields.hasErrors("rating")}"
+           th:error="*{rating}" class="error-msg"></div>
       【一言コメント】
       <input type="text" th:field="*{comment}">
+      <div th:if="${#fields.hasErrors("comment")}"
+           th:error="*{comment}" class="error-msg"></div>
 
       <input type="submit" value="登録"　class="btn">
   </form>
