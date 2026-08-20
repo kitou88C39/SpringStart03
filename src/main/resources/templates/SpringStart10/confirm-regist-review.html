@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>レビュー登録確認</title>
+  <link rel="stylesheet" th:href="@{/css/style09.css}">
+</head>
+<body>
+  <h2>レビュー登録確認</h2>
+
+   <div th:object="${reviewRegistForm}">
+      【店舗ID】
+      <p th:text="*{restaurantId}"></p>
+      【利用者ID】
+      <p th:text="*{userId}"></p>
+      【来店日】
+      <p th:text="*{visitDate}"></p>
+      【評価】
+      <p th:text="*{rating}"></p>
+      【一言コメント】
+      <p th:text="*{comment}"></p>
+   </div>
+
+   <form th:action="@{/confirm-regist-review}" method="POST"
+         th:object="${reviewRegistForm}">
+
+     <input type="hidden" th:field="*{restaurantId}">
+     <input type="hidden" th:field="*{userId}">
+     <input type="hidden" th:field="*{visitDate}">
+     <input type="hidden" th:field="*{rating}">
+     <input type="hidden" th:field="*{comment}" class="btn">
+     <input type="submit" value="登録実行" class="btn">
+   </form>
+
+   <form th:action="@{/show-regist-review}"　method="POST"
+         th:object="${reviewRegistForm}">
+
+     <input type="hidden" th:field="*{restaurantId}">
+     <input type="hidden" th:field="*{userId}">
+     <input type="hidden" th:field="*{visitDate}">
+     <input type="hidden" th:field="*{rating}">
+     <input type="hidden" th:field="*{comment}"　 class="btn">
+     <input type="submit" value="戻る" class="btn">
+   </form>
+
+</body>
+</html>
