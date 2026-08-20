@@ -1,3 +1,8 @@
+package com.example.demo.form;
+
+import java.sql.Date;
+import lombok.Data;
+
 @Data
 public class ReviewRegistForm {
 
@@ -11,6 +16,11 @@ public class ReviewRegistForm {
     @Past(message = "今日以前の日付を入力してください")
     private Date visitDate;
 
+    @NotNull(message = "入力してください")
     @Min(value = 1, message = "1～5で指定してください")
     @Max(value = 5, message = "1～5で指定してください")
     private Integer rating;
+
+    @Size(min=1, max=128, message="1文字から128文字で指定してください")
+    private String comment;
+}
