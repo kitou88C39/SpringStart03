@@ -4,6 +4,6 @@ public class RegistServiceImpl implements RegistService {
 
 @Override
 public String regist(){
-    return null;
+    return "レビュー登録が完了しました";
     }
 }
