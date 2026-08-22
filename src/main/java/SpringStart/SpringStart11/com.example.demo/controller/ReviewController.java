@@ -46,7 +46,10 @@ public class ReviewController {
             return "regist-review";
         }
 
-        model.addAttribute("msg", "レビュー登録が完了しました。");
+        RegistService service = new RegistServiceImple();
+        String msg = service.regist();
+
+        model.addAttribute("msg", msg);
 
         return "complete-regist-review";
     }
