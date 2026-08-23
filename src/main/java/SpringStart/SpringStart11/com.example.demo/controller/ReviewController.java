@@ -70,18 +70,9 @@ import lombok.Data;
 @Data
 public class Review {
 
-    /** 店舗ID */
     private Integer restaurantId;
-
-    /** 利用者ID */
     private String userId;
-
-    /** 来店日 */
     private Date visitDate;
-
-    /** 評価 */
     private Integer rating;
-
-    /** 一言コメント */
     private String comment;
 }
