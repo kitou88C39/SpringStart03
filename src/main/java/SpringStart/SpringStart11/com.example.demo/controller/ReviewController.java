@@ -13,6 +13,12 @@ import com.example.demo.form.ReviewRegistForm;
 @Controller
 public class ReviewController {
 
+    private final RegistService service;
+
+    public ReviewController(RegistService service){
+        this.service = service;
+    }
+
     @GetMapping("/show-review-form")
     public String showReviewForm(@ModelAttribute ReviewRegistForm form) {
         return "regist-review";
