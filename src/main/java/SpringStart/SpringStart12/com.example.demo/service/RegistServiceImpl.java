@@ -15,5 +15,7 @@ public class RegistServiceImpl implements RegistService {
 
     @Override
     public void regist(Review review){
+
+        repository.add(review);
     }
 }
