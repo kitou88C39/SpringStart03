@@ -1,12 +1,8 @@
 package com.example.demo.service;
 
-import org.springframework.stereotype.Service;
+import com.example.demo.entity.Review;
 
-@Service
-public class RegistServiceImpl implements RegistService {
+public interface RegistService {
 
-@Override
-public String regist(){
-    return "レビュー登録が完了しました";
-    }
+    void regist(Review review);
 }
