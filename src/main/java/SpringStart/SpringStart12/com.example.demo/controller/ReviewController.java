@@ -11,14 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.example.demo.form.ReviewRegistForm;
 
 @Controller
+@RequiredArgsConstructor
 public class ReviewController {
 
     private final RegistService service;
-
-    @Autowired
-    public ReviewController(RegistService service){
-        this.service = service;
-    }
 
     @GetMapping("/show-review-form")
     public String showReviewForm(@ModelAttribute ReviewRegistForm form) {
@@ -45,7 +41,7 @@ public class ReviewController {
 
     @PostMapping("/confirm-regist-review")
     public String confirmRegistReview(
-            @Validated @ModelAttribute ReviewRegistForm form,
+            @Validated ReviewRegistForm form,
             BindingResult result,
             Model model) {
 
@@ -53,8 +49,14 @@ public class ReviewController {
             return "regist-review";
         }
 
-        RegistService service = new RegistServiceImple();
-        String msg = service.regist();
+        //DTOを渡してserviceのregist()メソッドを呼び出す
+        Review　r = new Review();
+        r.setRestaurantId(form.getRestaurantId());
+        r.setUserId(form.getUserId());
+        r.setVisitDate(form.getVisitDate());
+        r.setRating(form.getRating());
+        r.setComment(form.getComment());
+        String msg = service.regist(r);
 
         model.addAttribute("msg", msg);
 
