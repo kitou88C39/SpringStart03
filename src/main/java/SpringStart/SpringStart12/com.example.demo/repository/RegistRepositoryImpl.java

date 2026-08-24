@@ -8,6 +8,7 @@ public class RegistRepositoryImpl implements RegistRepository {
     @Override
     public void regist(Review review){
 
-        repository.add(review);
+         System.out.println("登録");
+         System.out.println(review);
     }
 }
