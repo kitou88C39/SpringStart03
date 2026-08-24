@@ -1,6 +1,10 @@
 package com.example.demo.service;
 
+import org.springframework.streotype.Service;
+
 import com.example.demo.entity.Review;
+import com.example.demo.repository.RegistRepository;
+
 import lombok.RequiredArgsConstructor;
 
 @Service
