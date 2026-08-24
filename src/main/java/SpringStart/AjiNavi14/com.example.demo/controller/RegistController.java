@@ -12,7 +12,7 @@ import com.example.demo.form.ReviewRegistForm;
 
 @Controller
 @RequiredArgsConstructor
-public class ReviewController {
+public class RegistController {
 
     private final RegistService service;
 
@@ -58,8 +58,8 @@ public class ReviewController {
         r.setComment(form.getComment());
         String msg = service.regist(r);
 
-        model.addAttribute("msg", msg);
+        model.addAttribute("msg", "レビュー登録");
 
-        return "complete-regist-review";
+        return "complete";
     }
 }
