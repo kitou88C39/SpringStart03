@@ -2,7 +2,12 @@ package com.example.demo.repository;
 
 import com.example.demo.entity.Review;
 
-public interface RegistRepositoryImpl {
+@Repository
+public class RegistRepositoryImpl implements RegistRepository {
 
-    void add(Review review);
+    @Override
+    public void regist(Review review){
+
+        repository.add(review);
+    }
 }
