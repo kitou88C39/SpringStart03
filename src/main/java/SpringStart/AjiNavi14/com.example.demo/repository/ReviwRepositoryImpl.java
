@@ -11,7 +11,15 @@ public class ReviewRepositoryImpl implements ReviewRepository {
     @Override
     public void add(Review review){
 
-         System.out.println("登録");
-         System.out.println(review);
+      String sql =
+        "INSERT INTO t_review" +
+        "(restaurant id, user id, visit_date, rating, comment)" +
+        "VALUES(?,?,?,?,?)";
+
+      jdbcTemplate.update(sql, review.getRestaurantId(),
+                               review.getUserId(),
+                               review.getVisitDate(),
+                               review.getRating(),
+                               review.getComment(),);
     }
 }
