@@ -43,7 +43,7 @@ public class RegistController {
     public String confirmRegistReview(
             @Validated ReviewRegistForm form,
             BindingResult result,
-            Model model) {
+            RedirectAttributes redirectAttributes) {
 
         if (result.hasErrors()) {
             return "regist-review";
@@ -58,8 +58,8 @@ public class RegistController {
         r.setComment(form.getComment());
         String msg = service.regist(r);
 
-        model.addAttribute("msg", "レビュー登録");
+        redirectAttributes.addFlashAttribute("msg", "レビュー登録");
 
-        return "complete";
+        return "redirect:/complete";
     }
 }
