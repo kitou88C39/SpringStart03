@@ -1,12 +1,15 @@
 package com.example.demo.repository;
 
-import com.example.demo.entity.Review;
+import com.example.demo.entity.Repository;
 
 @Repository
-public class RegistRepositoryImpl implements RegistRepository {
+@RequiredArgsConstructor
+public class ReviewRepositoryImpl implements ReviewRepository {
+
+    private final jdbcTemplate jdbcTemplate;
 
     @Override
-    public void regist(Review review){
+    public void add(Review review){
 
          System.out.println("登録");
          System.out.println(review);
