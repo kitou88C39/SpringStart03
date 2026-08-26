@@ -12,7 +12,7 @@ import com.example.demo.form.ReviewRegistForm;
 
 @Controller
 @RequiredArgsConstructor
-public class RegistController {
+public class RestaurantController {
 
     private final RegistService service;
 
