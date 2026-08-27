@@ -1,8 +1,9 @@
 package com.example.demo.repository;
 
-import com.example.demo.entity.Review;
+import java.util.List;
+import com.example.demo.entity.Restaurant;
 
 public interface RestaurantRepository {
 
-    void add(Review review);
+    List<Restaurant> selectByNameWildcard(String restaurantName);
 }
