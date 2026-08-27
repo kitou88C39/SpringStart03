@@ -25,6 +25,8 @@ public class RestaurantListController {
            @ModelAttribute RestaurantSearchForm form,
            Model model) {
 
+        List<Restaurant> list
+            = service.findByNameWildcard(form.getRestaurantName());
 
         model.addAttribute("restaurantList", list);
 
