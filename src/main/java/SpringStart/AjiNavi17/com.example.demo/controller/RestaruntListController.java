@@ -9,7 +9,10 @@ import com.example.demo.form.RestaurantSearchForm;
 
 @Controller
 @RequiredArgsConstructor
+@RequiredArgsConstructor
 public class RestaurantListController {
+
+    private final RestaurantListService service;
 
     @GetMapping("/top")
     private String restaurantList(
@@ -22,10 +25,6 @@ public class RestaurantListController {
            @ModelAttribute RestaurantSearchForm form,
            Model model) {
 
-        List<Restaurant> list = new ArrayList<Restaurant>();
-        list.add(new Restaurant(1,"店舗1","キャッチ1", 3.5));
-        list.add(new Restaurant(2,"店舗2","キャッチ2", 3.6));
-        list.add(new Restaurant(3,"店舗3","キャッチ3", 3.7));
 
         model.addAttribute("restaurantList", list);
 
