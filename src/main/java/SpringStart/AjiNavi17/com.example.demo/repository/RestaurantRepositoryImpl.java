@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 
 @Repository
 @RequiredArgsConstructor
-public class ReviewRepositoryImpl implements ReviewRepository {
+public class RestaurantRepositoryImpl implements ReviewRepository {
 
     private final jdbcTemplate jdbcTemplate;
 
