@@ -1,8 +1,13 @@
 package com.example.demo.repository;
 
 import java.util.List;
+
+import org.springframework.jdbc.core.jdbcTemplate;
 import com.example.demo.entity.Repository;
+
 import com.example.demo.entity.Restaurant;
+import lombok.RequiredArgsConstructor;
+
 
 @Repository
 @RequiredArgsConstructor
