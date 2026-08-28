@@ -19,14 +19,26 @@ public class ReviewRepositoryImpl implements ReviewRepository {
     public void add(Review review){
 
       String sql =
-        "INSERT INTO t_review" +
-        "(restaurant id, user id, visit_date, rating, comment)" +
-        "VALUES(?,?,?,?,?)";
+      "SELECT"+
+      " mr.restaurant_id,                            "+
+      " mr.restaurant_name,                          "+
+      " mr.restaurant_phrase,                        "+
+      " COALESCE(AVG(tr.rating), 0.0) avarage_rating "+
+      ""+
+      ""+
+      ""+
+      ""+
+      ""+
+      ""+
+      ""+
+      ""+
+      ""+
+      ""+
+      ""+
+      "";
 
-      jdbcTemplate.update(sql, review.getRestaurantId(),
-                               review.getUserId(),
-                               review.getVisitDate(),
-                               review.getRating(),
-                               review.getComment(),);
+
+    return null;
+
     }
 }
