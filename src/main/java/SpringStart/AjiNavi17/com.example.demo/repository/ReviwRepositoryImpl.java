@@ -24,21 +24,18 @@ public class ReviewRepositoryImpl implements ReviewRepository {
       " mr.restaurant_name,                          "+
       " mr.restaurant_phrase,                        "+
       " COALESCE(AVG(tr.rating), 0.0) avarage_rating "+
-      ""+
-      ""+
-      ""+
-      ""+
-      ""+
-      ""+
-      ""+
-      ""+
-      ""+
-      ""+
-      ""+
-      "";
-
-
+      "FROM                                          "+
+      " m_restaurant_mr                              "+
+      " LEFT OUTER JOIN t_review tr                  "+
+      "        ON mr.restaurant_id = tr.restaurant_id"+
+      "WHERE                                         "+
+      " mr.restaurant_name LIKE?                     "+
+      "GROUP BY                                      "+
+      " mr.restaurant_id,                            "+
+      " mr.restaurant_name,                          "+
+      " mr.catch_phrase                              "+
+      "ORDER BY"+
+      " mr.restaurant_id                             ";
     return null;
-
     }
 }
