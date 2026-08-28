@@ -10,7 +10,7 @@ import com.example.demo.form.RestaurantSearchForm;
 @Controller
 @RequiredArgsConstructor
 @RequiredArgsConstructor
-public class RegistController {
+public class RestaurantListController {
 
     private final RestaurantListService service;
 
