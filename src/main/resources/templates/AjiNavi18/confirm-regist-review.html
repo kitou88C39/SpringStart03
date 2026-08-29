@@ -9,17 +9,18 @@
 
 	<h2>レビュー登録確認</h2>
 
-	<div th:object="${reviewRegistForm}">
-		【店舗】<br>
-		<p th:text="*{restaurantId}"></p><br><br>
-	   	【利用者ID】<br>
-	   	<p th:text="*{userId}"></p><br><br>
-	   	【来店日】<br>
-	   	<p th:text="*{visitDate}"></p><br><br>
-	   	【評価】(1-5)<br>
-	   	<p th:text="*{rating}"></p><br><br>
-	   	【一言コメント】<br>
-	   	<p th:text="*{comment}"></p><br><br>
+	<div class="confirm-table" th:object="${reviewRegistForm}">
+
+	【店舗】
+		<p th:text="*{restaurantId}"></p>
+	   	【利用者ID】
+	   	<p th:text="*{userId}"></p>
+	   	【来店日】
+	   	<p th:text="*{visitDate}"></p>
+	   	【評価】(1-5)
+	   	<p th:text="*{rating}"></p>
+	   	【一言コメント】
+	   	<p th:text="*{comment}"></p>
 	</div>
 
     <form th:action="@{/confirm-regist-review}" method="POST"
