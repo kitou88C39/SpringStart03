@@ -7,19 +7,12 @@
 </head>
 <body>
 
-    <h2>エラーが発生しました</h2>
-
-    <p>申し訳ありません。処理中にエラーが発生しました。</p>
-
-    <p>
-        お手数ですが、もう一度やり直してください。
-    </p>
-
+    <h2>エラー</h2>
     <br>
-
-    <a th:href="@{/}">
-        トップページへ戻る
-    </a>
+    <p class="error-msg">エラーが発生しました</p>
+    <p class="error-msg" th:text="${status} + '' +${error}"></p>
+    <br>
+    <a th:href="@{/top}">トップページへ戻る</a>
 
 </body>
 </html>
