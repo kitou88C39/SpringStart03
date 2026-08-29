@@ -9,11 +9,13 @@
 
 	<h2>レビュー登録</h2>
 
-    <form th:action="@{/regist-review}" method="POST" 
+    <form th:action="@{/regist-review}" method="POST"
     		th:object="${reviewRegistForm}">
 		【店舗ID】<br>
-		<input type="text" th:field="*{restaurantId}"><br>
-    	<div th:if="${#fields.hasErrors('restaurantId')}" th:errors="*{restaurantId}" class="error-msg"></div>
+		<p th:text="*{restaurantId} + '' + *{restaurantName}"></p>
+		<input type="text" th:field="*{restaurantId}">
+		<input type="text" th:field="*{restaurantName}">
+		<div th:if="${#fields.hasErrors('restaurantId')}" th:errors="*{restaurantId}" class="error-msg"></div>
 		<br>
     	【利用者ID】<br>
     	<input type="text" th:field="*{userId}"><br>
