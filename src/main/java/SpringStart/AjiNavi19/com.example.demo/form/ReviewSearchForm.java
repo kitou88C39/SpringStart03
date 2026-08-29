@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class ReviewSearchForm {
 
-    private String restaurantId;
+    private Integer restaurantId;
     private String restaurantName;
 }
