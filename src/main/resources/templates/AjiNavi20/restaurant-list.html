@@ -21,7 +21,7 @@
 
 	<table class="restaurant-list">
 		<tr>
-		    <th>レビュー</th>
+		    <th colspan="2">レビュー</th>
 			<th>店舗ID</th>
 			<th>店舗名</th>
 			<th>キャッチフレーズ</th>
@@ -29,6 +29,13 @@
 		</tr>
 
 		<tr th:each="restaurant : ${restaurantList}">
+        <td>
+            <form th:action="@{/show-regist-review}" method="POST">
+                <input type="hidden" name="restaurantId" th:value="${restaurant.restaurantId}">
+                <input type="hidden" name="restaurantName" th:value="${restaurant.restaurantName}">
+                <input type="submit" value="登録"　class="tbtn">
+            </form>
+        </td>
         <td>
             <form th:action="@{/show-regist-review}" method="POST">
                 <input type="hidden" name="restaurantId" th:value="${restaurant.restaurantId}">
