@@ -34,6 +34,7 @@
 			th:selected="${option == rating}">
 			</option>
 		</select>
+		<div th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}" class="error-msg"></div>
     	【一言コメント】<br>
     	<input type="text" th:field="*{comment}" class="comment" ><br>
     	<div th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}" class="error-msg"></div>
