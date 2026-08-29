@@ -11,21 +11,21 @@
 
 	<table class="confirm-table" th:object="${reviewRegistForm}">
 	<tr>
-	【店舗】
+	    <td class="guide">【店舗】</td>
 		<p th:text="*{restaurantId}"></p>
 	</tr>
 	<tr>
-	   	【利用者ID】
+	   	<td class="guide">【利用者ID】</td>
 	   	<p th:text="*{userId}"></p>
 	</tr>
-	   	【来店日】
+	   	<td class="guide">【来店日】</td>
 	   	<p th:text="*{visitDate}"></p>
 	<tr>
-	   	【評価】(1-5)
+	   	<td class="guide">【評価】(1-5)</td>
 	   	<p th:text="*{rating}"></p>
 	</tr>
 	<tr>
-	   	【一言コメント】
+	   	<td class="guide">【一言コメント】</td>
 	   	<p th:text="*{comment}"></p>
 	</tr>
 	</table>
