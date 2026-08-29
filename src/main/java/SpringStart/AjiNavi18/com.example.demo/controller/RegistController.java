@@ -16,7 +16,7 @@ public class RegistController {
 
     private final RegistService service;
 
-    @GetMapping("/show-review-form")
+    @PostMapping("/show-review-form")
     public String showReviewForm(@ModelAttribute ReviewRegistForm form) {
         return "regist-review";
     }
