@@ -16,9 +16,18 @@ public class ReviewListController {
     Model model) {
 
     review = new Review();
+    review.setReviewId(1);
+    review.setRestaurantId(1);
+　　　　review.setUserId("user1");
+    review.setVisitDate(Date valueOf("2027-02-20"));
+    review.setRaring(4);
+    review.setCommit("comment1");
+    list.add(review);
+
+    review = new Review();
     review.setReviewId(2);
     review.setRestaurantId(1);
-　　　　review.setUserId("userId");
+　　　　review.setUserId("user2");
     review.setVisitDate(Date valueOf("2027-02-20"));
     review.setRaring(4);
     review.setCommit("comment2");
