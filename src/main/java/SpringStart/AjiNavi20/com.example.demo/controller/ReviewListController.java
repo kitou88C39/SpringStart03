@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.example.demo.form.ReviewSearchForm;
@@ -12,5 +13,6 @@ public class ReviewListController {
     @ModelAttribute ReviewSearchForm form,
     Model model) {
 
+    return null;
     }
 }
