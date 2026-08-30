@@ -20,14 +20,12 @@ public class ReviewListController {
     @ModelAttribute ReviewSearchForm form,
     Model model) {
 
-    List<Review> list = new ArrayList<Review>();
-
-
+    List<Review> list = service.findByRestaurantId(form.getRestaurantId());
 
     if(list.size()>0){
         model.addAttribute("reviewList", list)
     }
 
-    return null;
+    return "review-list";
     }
 }
