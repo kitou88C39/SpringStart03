@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.sql.Date;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -9,7 +10,10 @@ import com.example.demo.entity.Review;
 import com.example.demo.form.ReviewSearchForm;
 
 @Controller
+@RequiredArgsConstructor
 public class ReviewListController {
+
+    private final ReviewListService service;
 
     @PostMapping("/search-review")
     private String searchReview(
