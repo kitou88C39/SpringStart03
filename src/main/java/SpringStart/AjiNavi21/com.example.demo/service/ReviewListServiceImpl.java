@@ -15,9 +15,8 @@ public class ReviewListServiceImpl implements ReviewListService {
     @Override
     public List<Review> findByRestaurantId(int restaurantId);
 
-        List<Review> list
-            = repository.selectByRestaurantId(restaurantName);
+        List<Review> list = repository.selectByRestaurantId(restaurantName);
 
-        return null;
+        return list;
     }
 }
