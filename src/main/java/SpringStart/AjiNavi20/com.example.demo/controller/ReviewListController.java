@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.demo.entity.Review;
 import com.example.demo.form.ReviewSearchForm;
 
 @Controller
@@ -14,6 +15,8 @@ public class ReviewListController {
     private String searchReview(
     @ModelAttribute ReviewSearchForm form,
     Model model) {
+
+    List<Review> list = new ArrayList<Review>();
 
     review = new Review();
     review.setReviewId(1);
