@@ -6,4 +6,6 @@ import com.example.demo.entity.Review;
 public interface ReviewRepository {
 
     void add(Review review);
+
+    List<Review> selectByRestaurantId(int restaurantId);
 }
