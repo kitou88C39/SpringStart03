@@ -17,15 +17,15 @@ public class ReviewListController {
 
     @PostMapping("/search-review")
     private String searchReview(
-    @ModelAttribute ReviewSearchForm form,
-    Model model) {
+        @ModelAttribute ReviewSearchForm form,
+        Model model) {
 
-    List<Review> list = service.findByRestaurantId(form.getRestaurantId());
+        List<Review> list = service.findByRestaurantId(form.getRestaurantId());
 
-    if(list.size()>0){
-        model.addAttribute("reviewList", list)
+        if(list.size()>0){
+            model.addAttribute("reviewList", list);
     }
 
-    return "review-list";
+        return "review-list";
     }
 }
