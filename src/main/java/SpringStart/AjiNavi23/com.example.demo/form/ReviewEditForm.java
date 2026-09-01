@@ -11,10 +11,9 @@ import lombok.Data;
 
 @Data
 public class ReviewEditForm {
-
     @NotNull(message = "入力してください")
     @Min(value = 1, message = "正の整数を入力してください")
-    private Integer restaurantId;
+    private Integer reviewId;
 
     private String restaurantName;
 
