@@ -12,7 +12,7 @@ import com.example.demo.form.ReviewRegistForm;
 
 @Controller
 @RequiredArgsConstructor
-public class EditController {
+public class RegistController {
 
     private final RegistService service;
 
