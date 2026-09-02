@@ -14,10 +14,8 @@ import com.example.demo.form.ReviewRegistForm;
 @RequiredArgsConstructor
 public class EditController {
 
-    private final RegistService service;
-
-    @PostMapping("/show-review-form")
-    public String showReviewForm(@ModelAttribute ReviewRegistForm form) {
+    @PostMapping("/show-edit-form")
+    public String showEditForm(@ModelAttribute ReviewRegistForm form) {
         return "regist-review";
     }
 
