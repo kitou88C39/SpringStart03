@@ -16,19 +16,19 @@ public class EditController {
 
     @PostMapping("/show-edit-form")
     public String showEditForm(@ModelAttribute ReviewRegistForm form) {
-        return "regist-review";
-    }
-
-    @PostMapping("/show-review-form-ret")
-    public String registReviewFormRet(
-            @ModelAttribute ReviewRegistForm form) {
-        return "regist-review";
+        return "edit-review";
     }
 
     @PostMapping("/regist-review")
     public String registReview(
             @Validated @ModelAttribute ReviewRegistForm form,
             BindingResult result) {
+
+    @PostMapping("/show-review-form-ret")
+    public String registReviewFormRet(
+            @ModelAttribute ReviewRegistForm form) {
+        return "regist-review";
+    }
 
         if (result.hasErrors()) {
             return "regist-review";
