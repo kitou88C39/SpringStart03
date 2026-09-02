@@ -1,65 +1,70 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.example.demo.form.ReviewRegistForm;
+import com.example.demo.entity.Review;
+import com.example.demo.form.ReviewEditForm;
+
+import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
-public class RegistController {
+public class EditController {
 
-    private final RegistService service;
+	/*--- レビュー編集画面表示リクエスト ---*/
+	@PostMapping("/show-edit-form")
+	public String showEditForm(@ModelAttribute ReviewEditForm form) {
+		return "edit-review";
+	}
 
-    @PostMapping("/show-review-form")
-    public String showReviewForm(@ModelAttribute ReviewRegistForm form) {
-        return "regist-review";
-    }
+	/*--- レビュー更新リクエスト（編集画面より） ---*/
+	@PostMapping("/edit-review")
+	public String editReview(
+			@Validated @ModelAttribute ReviewEditForm form,
+			BindingResult result) {
 
-    @PostMapping("/show-review-form-ret")
-    public String registReviewFormRet(
-            @ModelAttribute ReviewRegistForm form) {
-        return "regist-review";
-    }
+		// 入力エラーがある場合には レビュー編集画面に戻す
+		if (result.hasErrors()) {
+			return "edit-review";
+		}
 
-    @PostMapping("/regist-review")
-    public String registReview(
-            @Validated @ModelAttribute ReviewRegistForm form,
-            BindingResult result) {
+		// 正常な場合に レビュー編集確認画面に 遷移する
+		return "confirm-edit-review";
+	}
 
-        if (result.hasErrors()) {
-            return "regist-review";
-        }
+	/*--- レビュー更新リクエスト（編集確認画面より） ---*/
+	@PostMapping("/confirm-edit-review")
+	public String confirmEditReview(
+			@Validated ReviewEditForm form,
+			BindingResult result,
+			RedirectAttributes redirectAttributes) {
 
-        return "confirm-regist-review";
-    }
+		// 入力エラーがある場合には レビュー編集画面に戻す
+		if (result.hasErrors()) {
+			return "edit-review";
+		}
 
-    @PostMapping("/confirm-regist-review")
-    public String confirmRegistReview(
-            @Validated ReviewRegistForm form,
-            BindingResult result,
-            Model model) {
+		Review r = new Review();
+		r.setReviewId(form.getReviewId());
+		r.setRestaurantId(form.getRestaurantId());
+		r.setUserId(form.getUserId());
+		r.setVisitDate(form.getVisitDate());
+		r.setRating(form.getRating());
+		r.setComment(form.getComment());
 
-        if (result.hasErrors()) {
-            return "regist-review";
-        }
+		// 暫定で表示
+		System.out.println("--レビュー更新");
+		System.out.println(r);
+		// 暫定で表示(End)
 
-        //DTOを渡してserviceのregist()メソッドを呼び出す
-        Review　r = new Review();
-        r.setRestaurantId(form.getRestaurantId());
-        r.setUserId(form.getUserId());
-        r.setVisitDate(form.getVisitDate());
-        r.setRating(form.getRating());
-        r.setComment(form.getComment());
-        String msg = service.regist(r);
+		redirectAttributes.addFlashAttribute("msg", "(レビュー更新)");
 
-        model.addAttribute("msg", "レビュー登録");
+		return "redirect:/complete";
+	}
 
-        return "complete";
-    }
 }
