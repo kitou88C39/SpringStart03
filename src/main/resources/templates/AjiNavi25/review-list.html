@@ -44,7 +44,7 @@
 				</form>
 			</td>
 			<td>
-				<form th:action="@{/show-edit-form}" method="POST">
+				<form th:action="@{/review-form}" method="POST">
 					<input type="hidden" name="reviewId"       th:value="${review.reviewId}">
 					<input type="hidden" name="restaurantId"   th:value="${reviewSearchForm.restaurantId}">
 					<input type="hidden" name="restaurantName" th:value="${reviewSearchForm.restaurantName}">
@@ -52,7 +52,7 @@
 					<input type="hidden" name="visitDate"      th:value="${review.visitDate}">
 					<input type="hidden" name="rating"         th:value="${review.rating}">
 					<input type="hidden" name="comment"        th:value="${review.comment}">
-					<input type="submit" value="編集" class="tbtn">
+					<input type="submit" value="削除" class="tbtn">
 				</form>
 			</td>
 			<td th:text="${review.reviewId}"></td>
