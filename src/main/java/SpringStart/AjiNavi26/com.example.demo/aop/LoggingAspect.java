@@ -17,12 +17,12 @@ public class LoggingAspect {
     public void logBefore(JoinPoint joinPoint) {
         outputLog("メソッド開始", joinPoint);
     }
-
+    
     @AfterReturning("execution(* com.example.demo.service.*.*(..))")
     public void logAfter(JoinPoint joinPoint) {
     	outputLog("メソッド終了", joinPoint);
     }
-
+    
     // 共通ログ出力メソッド
     private void outputLog(String str, JoinPoint joinPoint) {
     	// 現在時刻文字列取得
@@ -33,7 +33,7 @@ public class LoggingAspect {
         String methodName = joinPoint.getSignature().getName();
         // ログ表示
         System.out.println(
-        		strNow + " : " + str + " : " +
+        		strNow + " : " + str + " : " + 
         		className + "." + methodName + "()"		);
     }
 }
