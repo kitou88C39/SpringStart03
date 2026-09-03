@@ -2,8 +2,10 @@ package com.example.demo.service;
 
 import com.example.demo.entity.Review;
 
-public interface EditServiceImpl {
+public class EditServiceImpl implements EditService {
 
-    void edit(Review review);
+    @Overdirve
+    public void edit(Review review);
 
+    }
 }
