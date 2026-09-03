@@ -16,6 +16,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class EditController {
 
+    private final EditService service;
+
 	/*--- レビュー編集画面表示リクエスト ---*/
 	@PostMapping("/show-edit-form")
 	public String showEditForm(@ModelAttribute ReviewEditForm form) {
@@ -57,10 +59,7 @@ public class EditController {
 		r.setRating(form.getRating());
 		r.setComment(form.getComment());
 
-		// 暫定で表示
-		System.out.println("--レビュー更新");
-		System.out.println(r);
-		// 暫定で表示(End)
+
 
 		redirectAttributes.addFlashAttribute("msg", "(レビュー更新)");
 
