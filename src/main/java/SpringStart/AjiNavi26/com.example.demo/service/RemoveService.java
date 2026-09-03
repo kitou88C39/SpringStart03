@@ -1,8 +1,9 @@
 package com.example.demo.service;
 
+import com.example.demo.entity.Review;
 
 public interface RemoveService {
 
-    public void remove(Review review){
+    void remove(Review review);
 
 }
