@@ -3,7 +3,10 @@ package com.example.demo.service;
 import com.example.demo.entity.Review;
 import com.example.demo.repository.ReviewRepository;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class EditServiceImpl implements EditService {
 
     private final ReviewRepository repository;
