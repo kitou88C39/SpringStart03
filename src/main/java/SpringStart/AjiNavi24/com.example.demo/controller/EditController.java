@@ -59,7 +59,7 @@ public class EditController {
 		r.setRating(form.getRating());
 		r.setComment(form.getComment());
 
-
+        service.edit(r);
 
 		redirectAttributes.addFlashAttribute("msg", "(レビュー更新)");
 
