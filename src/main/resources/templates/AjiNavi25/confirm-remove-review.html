@@ -2,14 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>レビュー編集確認</title>
+<title>レビュー削除確認</title>
 <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-		
-	<h2>レビュー編集確認</h2>
 
-	<table class="confirm-table" th:object="${reviewEditForm}">
+	<h2>レビュー削除確認</h2>
+
+	<table class="confirm-table" th:object="${reviewRemoveForm}">
 		<tr>
 			<td class="guide">【ID】</td>
 			<td  th:text="*{reviewId}"></td>
@@ -36,27 +36,22 @@
 		</tr>
 	</table>
 	<br>
-	
-    <form th:action="@{/confirm-edit-review}" method="POST"
-			th:object="${reviewEditForm}">
+
+    <form th:action="@{/confirm-remove-review}" method="POST"
+			th:object="${reviewRemoveForm}">
     	<input type="hidden" th:field="*{reviewId}">
     	<input type="hidden" th:field="*{restaurantId}">
     	<input type="hidden" th:field="*{userId}">
     	<input type="hidden" th:field="*{visitDate}">
     	<input type="hidden" th:field="*{rating}">
     	<input type="hidden" th:field="*{comment}">
-    	<input type="submit" value="更新実行" class="btn">
+    	<input type="submit" value="削除実行" class="btn">
    	</form>
 
-    <form th:action="@{/show-edit-form}" method="POST"
-			th:object="${reviewEditForm}">
-    	<input type="hidden" th:field="*{reviewId}">
+    <form th:action="@{/search-review}" method="POST"
+			th:object="${reviewRemoveForm}">
     	<input type="hidden" th:field="*{restaurantId}">
     	<input type="hidden" th:field="*{restaurantName}">
-    	<input type="hidden" th:field="*{userId}">
-    	<input type="hidden" th:field="*{visitDate}">
-    	<input type="hidden" th:field="*{rating}">
-    	<input type="hidden" th:field="*{comment}" class="btn">
     	<input type="submit" value="もどる" class="btn">
    	</form>
 
